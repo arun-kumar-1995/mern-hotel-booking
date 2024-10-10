@@ -1,0 +1,153 @@
+header {
+  padding: 0.8rem 2%;
+  background-color: #003b95;
+}
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .middle-navbar,
+header .header-right {
+  display: none !important;
+}
+
+.header-container .logo h1 {
+  color: #f0f1f2;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.hamburger {
+  display: block;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 1rem;
+  transition: background 0.24s ease-in;
+}
+
+.hamburger:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 0.4rem;
+}
+
+.hamburger div {
+  width: 18px;
+  height: 2px;
+  background-color: #ccc;
+  margin: 2px;
+  transition: 0.3s;
+  border-radius: 0.2rem;
+}
+
+/*  side nav */
+.sidenav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 24rem;
+  height: 100vh;
+  background-color: #212121;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+  transform: translateX(-100%);
+  transition: transform 0.34s ease-in;
+  z-index: 1000;
+}
+
+.sidenav.open {
+  transform: translateX(0);
+}
+
+.sidenav-header {
+  display: inline-block;
+  margin-left: auto;
+}
+
+.btn-close {
+  padding: 0.8rem 1.2rem;
+  color: #fff;
+  cursor: pointer;
+  font-size: 2.4rem;
+}
+
+.btn-close:hover {
+  color: #f00;
+}
+
+nav.sidenav-nav li {
+  padding: 1rem 0;
+}
+nav.sidenav-nav a {
+  display: block;
+  width: 100%;
+  padding: 0rem 1.2rem;
+  color: #f0f1f2;
+  font-size: 1.3rem;
+}
+nav.sidenav-nav li:hover {
+  background-color: rgba(0, 0, 0, 0.24);
+}
+
+@media only screen and (min-width: 768px) {
+  .header-container .logo h1 {
+    color: #f0f1f2;
+    font-size: 2.4rem;
+  }
+
+  .middle-navbar,
+  .header-right {
+    display: block !important;
+  }
+  .hamburger {
+    display: none;
+  }
+
+  /* nav links */
+  .header-container li.links {
+    margin: 0 0.4em;
+  }
+  .header-container li.links a {
+    padding: 0.8rem 1.6rem;
+    font-size: 1.4rem;
+    border-radius: 1.2rem;
+  }
+  .header-container li.links a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  ul.nav-links {
+    display: flex;
+    align-items: center;
+  }
+  .nav-links a {
+    color: #f0f1f2;
+    font-weight: 400;
+  }
+  .nav-links .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 1.4rem;
+    border-radius: 0.4rem;
+  }
+  .nav-links .btn-login {
+    background-color: #f0f1f2;
+    color: #211223;
+  }
+
+  .nav-links .btn-login:hover {
+    background-color: #00b368;
+  }
+
+  /* side nav */
+  .sidenav {
+    display: none;
+  }
+}
