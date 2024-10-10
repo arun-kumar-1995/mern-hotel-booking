@@ -12,7 +12,7 @@ const App = () => {
       <Suspense fallback={<Loader />}>
         <Router>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route key="/" path="/" element={<Home />} />
             {AppRoutes.map((route, index) => (
               <Route
                 key={index}

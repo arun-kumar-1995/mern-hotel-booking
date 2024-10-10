@@ -1,18 +1,20 @@
 header {
-  padding: 0.8rem 2%;
+  padding: 0.8rem 1.2rem;
   background-color: #003b95;
 }
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
-header .middle-navbar,
-header .header-right {
-  display: none !important;
+.header-main {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.header-container .logo {
+  flex: 1;
 }
 
 .header-container .logo h1 {
@@ -21,32 +23,33 @@ header .header-right {
   font-weight: 500;
 }
 
-.hamburger {
-  display: block;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.hamburger {
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  padding: 1rem;
+.header-main a.btn-sign-in {
+  padding: 0.4rem 1.2rem;
+  font-size: 2.2rem;
+  color: #c2bf15;
+  border-radius: 0.4rem;
   transition: background 0.24s ease-in;
 }
 
-.hamburger:hover {
+.header-main a.btn-sign-in:hover {
+  background-color: rgba(225, 225, 225, 0.2);
+}
+
+button.hamburger {
+  padding: 0.8rem 1.2rem;
+  color: #c4c7c8;
+  font-size: 2rem;
+  transition: background 0.24s ease-in;
+}
+
+button.hamburger:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 0.4rem;
 }
 
-.hamburger div {
-  width: 18px;
-  height: 2px;
-  background-color: #ccc;
-  margin: 2px;
-  transition: 0.3s;
-  border-radius: 0.2rem;
+header .middle-navbar,
+header .header-right {
+  display: none;
 }
 
 /*  side nav */
@@ -99,9 +102,22 @@ nav.sidenav-nav li:hover {
 }
 
 @media only screen and (min-width: 768px) {
+  .header-main {
+    display: inline-block;
+    width: auto;
+  }
+  .btn-sign-in {
+    display: none;
+  }
   .header-container .logo h1 {
     color: #f0f1f2;
     font-size: 2.4rem;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .middle-navbar,

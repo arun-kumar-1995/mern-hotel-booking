@@ -1,0 +1,52 @@
+.hero-container {
+  background-image: url("../assets/hotel-booking-cover.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 40vh;
+  position: relative;
+}
+
+.hero-wrapper {
+  padding: 2rem 1rem;
+  border: 1px solid #e0dfdf;
+  background-color: rgba(244, 244, 244, 0.24);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.hero-container h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1c1c1e;
+}
+
+.hero-container p {
+  font-size: 1.6rem;
+  color: #f7f7f7;
+}
+
+@media only screen and (min-width: 768px) {
+  .hero-container {
+    min-height: 64vh;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .hero-wrapper {
+    padding: 3rem 0;
+  }
+
+  .hero-container h1,
+  .hero-container p {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-container h1{
+    font-size: 2.8rem;
+  }
+}
