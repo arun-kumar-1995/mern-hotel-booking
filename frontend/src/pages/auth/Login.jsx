@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import "../../styles/Login.css";
+import "../../styles/Form.css";
 
 import { FcGoogle } from "react-icons/fc";
 import { IoLogoFacebook } from "react-icons/io";
-import { Link } from "react-router-dom";
+import FormFooter from "../../components/FormFooter";
+import SocialButton from "../../components/shared/SocialButton";
 
 const Login = () => {
   return (
-    <div className="login-container">
-      <h2>Sign in or create an account</h2>
+    <div className="form-wrapper login-container">
+      <h2>Sign in to an account</h2>
       <p>
         You can sign in using your Booking.com account to access our services.
       </p>
@@ -17,7 +18,7 @@ const Login = () => {
         <label htmlFor="email">Email address</label>
         <input type="text" placeholder="Enter your email address" />
 
-        <button type="submit" className="btn-login">
+        <button type="submit" className="btn-login btn-form-submit">
           Continue with email
         </button>
       </form>
@@ -28,9 +29,12 @@ const Login = () => {
       </div>
 
       <div className="third-party-login">
-        <button title="facebook login" className="btn-social facebook">
-          <IoLogoFacebook />
-        </button>
+        <SocialButton
+          Icon={IoLogoFacebook}
+          title="facebook login"
+          className="btn-social facebook"
+        />
+
         <button title="google login" className="btn-social google">
           <FcGoogle />
         </button>
@@ -41,16 +45,7 @@ const Login = () => {
         <span></span>
       </div>
 
-      <p>
-        By signing in or creating an account, you agree with our
-        <Link to="/terms-condition" className="links">
-          Terms & Conditions
-        </Link>
-        and
-        <Link to="/privacy-olicy" className="links">
-          Privacy Statement
-        </Link>
-      </p>
+      <FormFooter />
     </div>
   );
 };
