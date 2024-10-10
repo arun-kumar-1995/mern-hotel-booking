@@ -5,8 +5,21 @@ import { FcGoogle } from "react-icons/fc";
 import { IoLogoFacebook } from "react-icons/io";
 import FormFooter from "../../components/FormFooter";
 import SocialButton from "../../components/shared/SocialButton";
+import SubmitButton from "../../components/shared/SubmitButton";
+
+const Divider = ({ text }) => (
+  <div className="divider">
+    <div className="hr"></div>
+    {text && <span>{text}</span>}
+  </div>
+);
 
 const Login = () => {
+  const socialLogins = [
+    { Icon: IoLogoFacebook, title: "facebook login", className: "facebook" },
+    { Icon: FcGoogle, title: "google login", className: "google" },
+  ];
+
   return (
     <div className="form-wrapper login-container">
       <h2>Sign in to an account</h2>
@@ -18,32 +31,26 @@ const Login = () => {
         <label htmlFor="email">Email address</label>
         <input type="text" placeholder="Enter your email address" />
 
-        <button type="submit" className="btn-login btn-form-submit">
-          Continue with email
-        </button>
+        <SubmitButton
+          className="btn-login btn-form-submit"
+          text="Continue with email"
+        />
       </form>
 
-      <div className="divider">
-        <div className="hr"></div>
-        <span>or use one of these options</span>
-      </div>
+      <Divider text="or use one of these options" />
 
       <div className="third-party-login">
-        <SocialButton
-          Icon={IoLogoFacebook}
-          title="facebook login"
-          className="btn-social facebook"
-        />
-
-        <button title="google login" className="btn-social google">
-          <FcGoogle />
-        </button>
+        {socialLogins.map(({ Icon, title, className }, index) => (
+          <SocialButton
+            key={index}
+            Icon={Icon}
+            title={title}
+            className={`btn-social ${className}`}
+          />
+        ))}
       </div>
 
-      <div className="divider">
-        <div className="hr"></div>
-        <span></span>
-      </div>
+      <Divider />
 
       <FormFooter />
     </div>
