@@ -1,0 +1,113 @@
+main {
+  background-color: #fff;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 0em auto;
+  padding: 2rem 0.8rem;
+}
+
+.login-container h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1c1c1e;
+}
+
+.login-container p {
+  margin-top: 1em;
+  font-size: 1.4rem;
+}
+
+.form-container {
+  margin-top: 1.2em;
+}
+
+.form-container label {
+  font-weight: 600;
+  display: block;
+  font-size: 1.4rem;
+}
+
+.form-container input {
+  width: 100%;
+  color: #1c1c1e;
+  outline: 1px solid #666;
+  padding: 1rem;
+  font-family: inherit;
+  border-radius: 0.4rem;
+  margin-top: 0.6em;
+}
+
+.form-container input:focus {
+  outline: 1px solid #006eff;
+}
+
+button.btn-login {
+  background-color: #006eff;
+  color: #f0f1f2;
+  padding: 1.4rem 2rem;
+  display: block;
+  width: 100%;
+  font-weight: 600;
+  border-radius: 0.4rem;
+  margin-top: 1.2em;
+  transition: background-color 0.24s ease-in;
+}
+
+button.btn-login:hover {
+  background-color: #2f00ff;
+}
+
+.divider {
+  margin: 2em 0;
+  position: relative;
+  text-align: center;
+}
+
+.divider .hr {
+  background-color: #ebe8e8dd;
+  height: 2px;
+  width: 100%;
+}
+.divider span {
+  position: absolute;
+  padding: 0 10px;
+  font-size: 1.4rem;
+  margin-top: -0.8em;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #fff;
+}
+
+.third-party-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.8rem;
+}
+
+.third-party-login .btn-social {
+  margin: 0.4em 0;
+  padding: 1.6rem 2rem;
+  outline: 1px solid #ddd;
+  font-size: 3.2rem;
+  border-radius: 0.8rem;
+  transition: outline 0.24s ease-in;
+}
+
+.third-party-login .btn-social:hover {
+  outline: 1px solid #006eff;
+}
+
+.third-party-login button.facebook svg {
+  fill: #2f00ff;
+}
+
+p {
+  color: #666;
+}
+
+p a.links {
+  margin-left: 0.2rem;
+}
