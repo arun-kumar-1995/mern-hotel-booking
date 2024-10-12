@@ -7,6 +7,7 @@ import { GoPeople, GoPlus } from "react-icons/go";
 import { MdMinimize } from "react-icons/md";
 import { BsCalendarDate } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
+import { useToast } from "../contexts/ToastContext";
 
 const Counter = ({ title, value, onDecrement, onIncrement }) => {
   return (
@@ -27,7 +28,7 @@ const Counter = ({ title, value, onDecrement, onIncrement }) => {
 
 const FilterBooking = ({ places = [] }) => {
   const navigate = useNavigate();
-
+  const { showSuccess, showError } = useToast();
   const [adult, setAdult] = useState(2);
   const [child, setChild] = useState(0);
   const [rooms, setRooms] = useState(1);
@@ -54,6 +55,10 @@ const FilterBooking = ({ places = [] }) => {
   const decrementRooms = () => setRooms(rooms > 0 ? rooms - 1 : 0);
 
   const handleFilterUrl = () => {
+    if (!inputSearchValue) {
+      showError("Select city you wan to go");
+      return;
+    }
     // Create the URL with query params
     const searchParams = new URLSearchParams({
       place: inputSearchValue,

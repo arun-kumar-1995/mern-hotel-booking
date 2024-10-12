@@ -1,12 +1,12 @@
 import React, { createContext, useContext, useCallback } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
-// create a context
+// Create a context
 const ToastContext = createContext();
 
-// define provider
+// Define provider
 const ToastProvider = ({ children }) => {
-  // define function
+  // Define function
   const showSuccess = useCallback((message) => {
     toast.success(message);
   }, []);
@@ -14,16 +14,17 @@ const ToastProvider = ({ children }) => {
   const showError = useCallback((message) => {
     toast.error(message);
   }, []);
+  
   return (
-    <ToastContext.Provider value={(showSuccess, showError)}>
+    <ToastContext.Provider value={{ showSuccess, showError }}>
       {children}
 
-      {/* create the Toaster components */}
+      {/* Create the Toaster component */}
       <Toaster />
     </ToastContext.Provider>
   );
 };
 
-// define hook
+// Define hook
 export const useToast = () => useContext(ToastContext);
 export default ToastProvider;
