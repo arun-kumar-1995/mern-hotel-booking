@@ -9,6 +9,8 @@ const SignUp = () => {
     { label: "Full name", placeholder: "Enter full name" },
     { label: "Email address", placeholder: "Enter your email address" },
     { label: "Phone", placeholder: "Enter your phone number" },
+    { label: "Password", placeholder: "Enter your password" },
+    { label: "Confirm Password", placeholder: "Confirm your password" },
   ];
 
   return (

@@ -131,6 +131,8 @@ nav.sidenav-nav li:hover {
   /* nav links */
   .header-container li.links {
     margin: 0 0.4em;
+    display: flex;
+    align-items: center;
   }
   .header-container li.links a {
     padding: 0.8rem 1.6rem;

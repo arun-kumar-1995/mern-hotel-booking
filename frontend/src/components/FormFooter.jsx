@@ -8,11 +8,11 @@ const FormFooter = () => {
         <li>
           <p>
             By signing in or creating an account, you agree with our
-            <Link to="/terms-condition" className="links">
+            <Link to="/terms-condition" className="links" target="_blank">
               Terms & Conditions
             </Link>
             and
-            <Link to="/privacy-olicy" className="links">
+            <Link to="/privacy-olicy" className="links" target="_blank">
               Privacy Statement
             </Link>
           </p>
