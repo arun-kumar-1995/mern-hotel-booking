@@ -6,6 +6,7 @@ import "../styles/FilterBooking.css";
 import { GoPeople, GoPlus } from "react-icons/go";
 import { MdMinimize } from "react-icons/md";
 import { BsCalendarDate } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const Counter = ({ title, value, onDecrement, onIncrement }) => {
   return (
@@ -25,6 +26,8 @@ const Counter = ({ title, value, onDecrement, onIncrement }) => {
 };
 
 const FilterBooking = ({ places = [] }) => {
+  const navigate = useNavigate();
+
   const [adult, setAdult] = useState(2);
   const [child, setChild] = useState(0);
   const [rooms, setRooms] = useState(1);
@@ -50,6 +53,16 @@ const FilterBooking = ({ places = [] }) => {
   const incrementRooms = () => setRooms(rooms + 1);
   const decrementRooms = () => setRooms(rooms > 0 ? rooms - 1 : 0);
 
+  const handleFilterUrl = () => {
+    // Create the URL with query params
+    const searchParams = new URLSearchParams({
+      place: inputSearchValue,
+      "check-in": checkInDate,
+      "check-out": checkOutDate,
+    });
+
+    navigate(`/search?${searchParams.toString()}`);
+  };
   return (
     <div className="booking-filter">
       <div className="filter-container">
@@ -145,7 +158,11 @@ const FilterBooking = ({ places = [] }) => {
           </div>
         </div>
 
-        <button type="button" className="btn btn-search">
+        <button
+          type="button"
+          className="btn btn-search"
+          onClick={handleFilterUrl}
+        >
           Search
         </button>
       </div>
